@@ -17,25 +17,12 @@ Route::get('/', function () {
 
 Route::get('about', function () {
     return view('about');
-});
+})->middleware(['auth', 'checkUser:dzulfikar.maulana@gmail.com']);
 
 Route::get('contact', function () {
     return view('contact');
-});
-
-
-//Route::middleware(['ipcheck'])->group(function () {
-//    Route::get('about', function () {
-//        return view('about');
-//    });
-//
-//    Route::get('contact', function () {
-//        return view('contact');
-//    });
-//});
-
+})->middleware(['auth', 'checkUser:f.pujihastuti@gmail.com']);
 
 Auth::routes();
-
 
 Route::get('/home', 'HomeController@index')->name('home');
