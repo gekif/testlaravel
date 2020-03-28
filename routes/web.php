@@ -19,6 +19,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('about', function () {
+    return view('about');
+})->middleware('ipcheck');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
