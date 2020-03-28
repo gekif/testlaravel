@@ -22,4 +22,10 @@ class CheckUser
         return redirect('/');
     }
 
+
+    public function terminate($request, $response)
+    {
+        file_put_contents(__DIR__ . '/abc.txt', 'Hello World From Terminate Method');
+    }
+
 }
